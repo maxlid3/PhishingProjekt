@@ -1,5 +1,5 @@
 // Icons from https://www.svgrepo.com/vectors/casino-5/
-export { default as Cards } from './cards.svg';
+export { default as AntiPhish_Logo512 } from '../AntiPhish_Logo512.png';
 export { default as Back } from './back.svg';
 
 export { default as CloverA } from './clover_a.svg';

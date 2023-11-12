@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import { Cards } from '@icons/cards';
-import Link from 'next/link';
+import Image from "next/image";
+import { AntiPhish_Logo512 } from "@icons/cards";
+import Link from "next/link";
 
 export default function Header() {
   const clearGame = () => {
@@ -10,21 +10,18 @@ export default function Header() {
   };
 
   return (
-    <div>
+    <div className="flex justify-center">
       <Link href="/">
         <a onClick={clearGame}>
-          <h1 className="text-4xl font-bold flex space-x-2">
-            <span>Memory Cards</span>
-            <div>
-              <Image
-                src={Cards}
-                alt="playing cards"
-                className="ml-2"
-                width={42}
-                height={42}
-              />
-            </div>
-          </h1>
+          <div>
+            <Image
+              src={AntiPhish_Logo512}
+              alt="AntiPhish_Logo512"
+              className="ml-2"
+              width={300}
+              height={300}
+            />
+          </div>
         </a>
       </Link>
     </div>
