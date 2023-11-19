@@ -3,10 +3,14 @@ import useSocketManager from '@hooks/useSocketManager';
 import { useRecoilValue } from 'recoil';
 import { CurrentLobbyState } from '@components/game/states';
 import Card from '@components/game/Card';
-import { Badge, LoadingOverlay, Overlay } from '@mantine/core';
+import { Badge, Button, LoadingOverlay, Overlay } from '@mantine/core';
 import { MantineColor } from '@mantine/styles';
 import { showNotification } from '@mantine/notifications';
 import { emitEvent } from '@utils/analytics';
+import { ButtonTest } from './ButtonTest';
+import React, { useState } from 'react';
+
+// OtherFile.ts
 
 export default function Game() {
   const {sm} = useSocketManager();
@@ -14,6 +18,14 @@ export default function Game() {
   const clientId = sm.getSocketId()!;
   let clientScore = 0;
   let opponentScore = 0;
+
+  const [isActive2, setIsActive2] = useState(true);
+
+  const handleToggle = (value: boolean) => {
+    setIsActive2(value);
+    // Hier kannst du den Wert nach Bedarf weiterverarbeiten
+    console.log('Toggle-Wert in Game:', value);
+  };
 
   for (const scoreId in currentLobbyState.scores) {
     if (scoreId === clientId) {
@@ -69,6 +81,9 @@ export default function Game() {
     });
   };
 
+  //ChatGPT hier einfügen
+  let isActive: boolean = true;
+  let isInactive: boolean = false;
   return (
     <div>
       <div className="flex justify-between items-center my-5">
@@ -118,8 +133,9 @@ export default function Game() {
       {!currentLobbyState.hasStarted && (
         <div className="text-center mt-5">
           <button className="btn" onClick={copyLobbyLink}>Copy lobby link</button>
+          <ButtonTest/>
         </div>
       )}
     </div>
-  );
+  )
 }

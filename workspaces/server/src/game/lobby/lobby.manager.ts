@@ -1,5 +1,5 @@
 import { Lobby } from '@app/game/lobby/lobby';
-import { Server } from 'socket.io';
+import { Server, Socket } from 'socket.io';
 import { AuthenticatedSocket } from '@app/game/types';
 import { ServerException } from '@app/game/server.exception';
 import { SocketExceptions } from '@shared/server/SocketExceptions';
@@ -8,6 +8,9 @@ import { ServerEvents } from '@shared/server/ServerEvents';
 import { ServerPayloads } from '@shared/server/ServerPayloads';
 import { LobbyMode } from '@app/game/lobby/types';
 import { Cron } from '@nestjs/schedule';
+import {ButtonState} from '@client/src/components/game/ButtonState';
+import React, {useState} from 'react';
+import { Instance } from '@app/game/instance/instance';
 
 export class LobbyManager
 {
@@ -27,7 +30,7 @@ export class LobbyManager
 
   public createLobby(mode: LobbyMode, delayBetweenRounds: number): Lobby
   {
-    let maxClients = 2;
+    let maxClients = 3;
 
     switch (mode) {
       case 'solo':
@@ -35,7 +38,7 @@ export class LobbyManager
         break;
 
       case 'duo':
-        maxClients = 2;
+        maxClients = 3;
         break;
     }
 
@@ -62,6 +65,25 @@ export class LobbyManager
 
     lobby.addClient(client);
   }
+  @Cron('* * * * * *')
+  private lobbyStatus(): void
+  {
+    console.log('Test', ButtonState);
+    const lobby = () => {
+      const forceStartValue = ButtonState;
+      console.log('Lobby: Force Start Value in Lobby:', forceStartValue);
+      for (const[lobbyID, lobby] of this.lobbies){
+        if (!forceStartValue) {
+          console.log('erstes Kack')
+          lobby.instance.triggerStart();
+          console.log('S.Force Start is true')
+        } else {
+          console.log('Force Start is false')
+        }
+      }
+    }
+    lobby();
+  }
 
   // Periodically clean up lobbies
   @Cron('*/5 * * * *')
@@ -71,7 +93,7 @@ export class LobbyManager
       const now = (new Date()).getTime();
       const lobbyCreatedAt = lobby.createdAt.getTime();
       const lobbyLifetime = now - lobbyCreatedAt;
-
+      console.log('LobbyCleanCheck')
       if (lobbyLifetime > LOBBY_MAX_LIFETIME) {
         lobby.dispatchToLobby<ServerPayloads[ServerEvents.GameMessage]>(ServerEvents.GameMessage, {
           color: 'blue',

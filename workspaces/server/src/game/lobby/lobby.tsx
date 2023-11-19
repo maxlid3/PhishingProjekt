@@ -5,33 +5,34 @@ import { AuthenticatedSocket } from '@app/game/types';
 import { Instance } from '@app/game/instance/instance';
 import { ServerPayloads } from '@shared/server/ServerPayloads';
 
+
+
 export class Lobby
 {
-  public readonly id: string = v4();
+  public id1: string = v4();
+  public id: string = this.id1.slice(0, -30);
 
   public readonly createdAt: Date = new Date();
 
   public readonly clients: Map<Socket['id'], AuthenticatedSocket> = new Map<Socket['id'], AuthenticatedSocket>();
 
   public readonly instance: Instance = new Instance(this);
-
+  
   constructor(
     private readonly server: Server,
     public readonly maxClients: number,
   )
   {
   }
-
+ 
   public addClient(client: AuthenticatedSocket): void
   {
     this.clients.set(client.id, client);
     client.join(this.id);
     client.data.lobby = this;
-
-    if (this.clients.size >= this.maxClients) {
-      this.instance.triggerStart();
-    }
-
+    //if (this.clients.size >= this.maxClients){
+    //  this.instance.triggerStart();
+    //}
     this.dispatchLobbyState();
   }
 
@@ -42,7 +43,8 @@ export class Lobby
     client.data.lobby = null;
 
     // If player leave then the game isn't worth to play anymore
-    this.instance.triggerFinish();
+    //L - triggerFinish, wenn nur noch 1 Spieler?
+    //this.instance.triggerFinish();
 
     // Alert the remaining player that client left lobby
     this.dispatchToLobby<ServerPayloads[ServerEvents.GameMessage]>(ServerEvents.GameMessage, {
