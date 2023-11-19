@@ -36,6 +36,12 @@
       ],
       "@icons/*": [
         "icons/*"
+      ],
+      "@shared/*": [
+        "../../shared/*"
+      ],
+      "@app/*": [
+        "../../server/src/*"
       ]
     }
   },
@@ -43,7 +49,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "../server/src/game/instance/ButtonState.ts"  ],
   "exclude": [
     "node_modules"
   ]
