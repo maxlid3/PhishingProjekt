@@ -14,7 +14,9 @@ const Question: React.FC<QuestionProps> = ({ imagePath }) => {
 
   return (
     <div>
-      <img src={imagePath} alt="Question" />
+      <div className="flex justify-center">
+        <img src={imagePath} alt="Question" />
+      </div>
       <div className="question">{currentQuestion.question}</div>
       <div className="answers">
         {quizState.answers.map((answer, index) => (

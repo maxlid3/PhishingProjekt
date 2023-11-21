@@ -8,15 +8,23 @@
 
 /* PopOut Menu */
 .menu button {
-  @apply bg-red-400
+  @apply bg-[#4caf50] text-white p-5 mt-32 w-52 rounded-lg
 }
 
 .menuCode {
-  @apply bg-white invisible flex h-60 w-60 justify-center items-center
+  @apply bg-gray-900 invisible flex p-3 mt-1 justify-center border-2 rounded-md w-96 ml-auto mr-auto
 }
 
 .menuCode.show-menu {
   @apply visible
+}
+
+.link {
+  @apply p-2 rounded-full
+}
+
+.link:hover {
+  @apply bg-gray-800 cursor-pointer
 }
 
 body{
@@ -26,18 +34,10 @@ body{
   padding: 0; /* Entfernt den Standardpadding des body-Elements */
 }
 .quiz {
-  text-align: center;
-  background-color: rgb(71 85 105); /* Dunkelgrau als Hintergrundfarbe */
+  @apply text-center bg-[rgb(71,85,105)] min-w-[880px]/* Dunkelgrau als Hintergrundfarbe */
 }
 .start-button {
-  cursor: pointer;
-  background-color: #4caf50;
-  color: #fff;
-  padding: 15px;
-  margin-top: 20px;
-  border: none;
-  border-radius: 8px;
-  font-size: 20px;
+  @apply cursor-pointer bg-[#4caf50] text-white p-5 mt-3 rounded-lg text-base relative
 }
 
 /* Frage-Container */
@@ -134,19 +134,6 @@ img {
 }
 
 /* Stile für den Start-Button */
-.start-button {
-  cursor: pointer;
-  background-color: #4caf50;
-  color: #fff;
-  padding: 10px;
-  margin-top: 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  flex-direction: column;
-
-}
-
 .start-button:hover {
   background-color: #45a049;
 }
