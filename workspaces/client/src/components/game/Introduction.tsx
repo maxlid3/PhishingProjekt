@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { emitEvent } from "@utils/analytics";
 import { Divider, Select } from "@mantine/core";
+import GameCode from "./GameCode";
 
 export default function Introduction() {
   const router = useRouter();
@@ -42,12 +43,10 @@ export default function Introduction() {
       <Divider my="md" />
 
       <div className="mt-5 flex items-center flex-col gap-3">
-        <button className="btn" onClick={() => onCreateLobby("solo")}>
-          Lobby beitreten <br /> (Solo)
-        </button>
         <button className="btn" onClick={() => onCreateLobby("duo")}>
-          Lobby erstellen <br /> (Duo)
+          Lobby erstellen <br /> (Solo)
         </button>
+        <GameCode/>
       </div>
     </div>
   );

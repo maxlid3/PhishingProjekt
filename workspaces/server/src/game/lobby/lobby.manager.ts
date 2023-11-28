@@ -8,7 +8,6 @@ import { ServerEvents } from '@shared/server/ServerEvents';
 import { ServerPayloads } from '@shared/server/ServerPayloads';
 import { LobbyMode } from '@app/game/lobby/types';
 import { Cron } from '@nestjs/schedule';
-import {ButtonState} from '@client/src/components/game/ButtonState';
 import React, {useState} from 'react';
 import { Instance } from '@app/game/instance/instance';
 
@@ -64,25 +63,6 @@ export class LobbyManager
     }
 
     lobby.addClient(client);
-  }
-  @Cron('* * * * * *')
-  private lobbyStatus(): void
-  {
-    console.log('Test', ButtonState);
-    const lobby = () => {
-      const forceStartValue = ButtonState;
-      console.log('Lobby: Force Start Value in Lobby:', forceStartValue);
-      for (const[lobbyID, lobby] of this.lobbies){
-        if (!forceStartValue) {
-          console.log('erstes Kack')
-          lobby.instance.triggerStart();
-          console.log('S.Force Start is true')
-        } else {
-          console.log('Force Start is false')
-        }
-      }
-    }
-    lobby();
   }
 
   // Periodically clean up lobbies

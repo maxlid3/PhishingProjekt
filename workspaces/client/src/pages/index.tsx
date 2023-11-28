@@ -2,10 +2,7 @@ import type { NextPage } from "next";
 import GameManager from "@components/game/GameManager";
 import Header from "@components/layout/Header";
 import DevCheck from "@components/layout/devCheck";
-
 import React from "react";
-import Quiz from "../components/phishgame/Quiz";
-import { QuizProvider } from "../components/phishgame/contexts/quiz";
 
 const Page: NextPage = () => {
   return (

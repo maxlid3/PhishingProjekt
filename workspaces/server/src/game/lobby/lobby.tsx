@@ -30,9 +30,9 @@ export class Lobby
     this.clients.set(client.id, client);
     client.join(this.id);
     client.data.lobby = this;
-    //if (this.clients.size >= this.maxClients){
-    //  this.instance.triggerStart();
-    //}
+    if (this.clients.size >= this.maxClients){
+      this.instance.triggerStart();
+    }
     this.dispatchLobbyState();
   }
 
@@ -44,14 +44,16 @@ export class Lobby
 
     // If player leave then the game isn't worth to play anymore
     //L - triggerFinish, wenn nur noch 1 Spieler?
-    //this.instance.triggerFinish();
-
+    client.data.lobby = this;
+    if(this.clients.size <= 1){
+    this.instance.triggerFinish();
+    }
     // Alert the remaining player that client left lobby
     this.dispatchToLobby<ServerPayloads[ServerEvents.GameMessage]>(ServerEvents.GameMessage, {
       color: 'blue',
       message: 'Opponent left lobby',
     });
-
+    
     this.dispatchLobbyState();
   }
 

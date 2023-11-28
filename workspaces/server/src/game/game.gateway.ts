@@ -94,4 +94,10 @@ export class GameGateway implements OnGatewayInit, OnGatewayConnection, OnGatewa
 
     client.data.lobby.instance.revealCard(data.cardIndex, client);
   }
+
+  @SubscribeMessage(ClientEvents.ForceStart)
+  handleMeinEvent(client: Socket, data: boolean): void {
+      const ForceStart = true;
+  }
 }
+//hier weiter machen
