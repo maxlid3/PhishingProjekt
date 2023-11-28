@@ -18,9 +18,10 @@ export default function Game() {
   const clientId = sm.getSocketId()!;
   let clientScore = 0;
   let opponentScore = 0;
-
+//TODO isActive2 is never used
   const [isActive2, setIsActive2] = useState(true);
 
+  //TODO handle Toggle is declared but never used
   const handleToggle = (value: boolean) => {
     setIsActive2(value);
     // Hier kannst du den Wert nach Bedarf weiterverarbeiten
@@ -82,6 +83,7 @@ export default function Game() {
   };
 
   //ChatGPT hier einfügen
+  //TODO Variables are never used
   let isActive: boolean = true;
   let isInactive: boolean = false;
   return (

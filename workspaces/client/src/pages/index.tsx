@@ -4,6 +4,7 @@ import Header from "@components/layout/Header";
 import DevCheck from "@components/layout/devCheck";
 
 import React from "react";
+//TODO unused? and not sure but why to Indexes.tsx files?
 import Quiz from "../components/phishgame/Quiz";
 import { QuizProvider } from "../components/phishgame/contexts/quiz";
 

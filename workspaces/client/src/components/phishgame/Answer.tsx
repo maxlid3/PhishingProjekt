@@ -14,6 +14,8 @@ const Answer: React.FC<AnswerProps> = ({
     correctAnswer,
   }) => {
     const letterMapping = ["A", "B", "C", "D"];
+    //TODO https://media.tenor.com/yBFx7v8GXSsAAAAd/joe-pesci-what-the-fuck.gif
+    //TODO maybe ask chatGPT to go through, extract it in an enum and maybe write it in an function so you only have one variable that you update idk, just looks very fucked
     const isCorrectAnswer = currentAnswer && answerText === correctAnswer;
     const isWrongAnswer =
       currentAnswer === answerText && currentAnswer !== correctAnswer;

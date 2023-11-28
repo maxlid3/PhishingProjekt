@@ -8,6 +8,7 @@ const Menu = () => {
         {menuOpen ? "Link verstecken" : "Link anzeigen"}
       </button>
       <div className={`menuCode${menuOpen ? " show-menu" : ""}`}>
+        {/* TODO why not use an <a> and hijack the event? */}
         <div
           className="link"
           id="linkText"
@@ -16,6 +17,7 @@ const Menu = () => {
           }}
         >
           {window.location.href}
+          {/* TODO alt attribute missing */}
           <img src="/copySymbol.png" id="copySymbol"></img>
         </div>
       </div>

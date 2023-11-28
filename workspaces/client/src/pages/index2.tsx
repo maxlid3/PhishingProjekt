@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import GameManager from "@components/game/GameManager";
 import Header from "@components/layout/Header";
+//TODO unused?
 import Menu from "@components/game/PopOut";
 
 const Page: NextPage = () => {
