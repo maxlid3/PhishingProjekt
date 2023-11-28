@@ -3,14 +3,9 @@ import Question from "./Question";
 import { QuizContext } from "./contexts/quiz";
 import Timer from "./Timer";
 
-import { useRecoilState } from "recoil";
-import { CurrentLobbyState } from "@components/game/states";
-
 import Menu from "@components/game/PopOut";
 
 const Quiz = () => {
-  const [lobbyState, setLobbyState] = useRecoilState(CurrentLobbyState);
-
   const [quizState, dispatch] = useContext(QuizContext);
   const [timer, setTimer] = useState(new Timer(10000));
   const [remainingTime, setRemainingTime] = useState<number | null>(
@@ -166,9 +161,6 @@ const Quiz = () => {
         <div>
           <div onClick={startGame} className="start-button">
             Start Game
-          </div>
-          <div onClick={() => console.log(lobbyState)} className="start-button">
-            Test
           </div>
           <div>
             <Menu />

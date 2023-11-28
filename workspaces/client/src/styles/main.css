@@ -12,19 +12,31 @@
 }
 
 .menuCode {
-  @apply bg-gray-900 invisible flex p-3 mt-1 justify-center border-2 rounded-md w-96 ml-auto mr-auto
+  @apply bg-gray-900 opacity-0 invisible transition-all flex p-3 mt-1 justify-center border-2 rounded-md w-96 ml-auto mr-auto
 }
 
 .menuCode.show-menu {
-  @apply visible
+  @apply opacity-100 visible
 }
 
 .link {
-  @apply p-2 rounded-full
+  @apply p-2 rounded-full flex
 }
 
 .link:hover {
   @apply bg-gray-800 cursor-pointer
+}
+
+#copySymbol {
+  width: 18px;
+  height: 20px;
+  filter:invert(95%);
+  margin-left: 4px;
+  transition: 0.15s;
+}
+
+.link:active > #copySymbol {
+  transform: scale(110%);
 }
 
 body{
@@ -147,4 +159,9 @@ img {
 
 .leaderboard > div {
   margin-bottom: 8px;
+}
+
+/*DevCheck*/
+.devButton {
+  @apply bg-red-500 cursor-pointer m-1 p-2 rounded-md justify-center
 }

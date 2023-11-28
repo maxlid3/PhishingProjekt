@@ -5,7 +5,7 @@ const Menu = () => {
   return (
     <nav className="menu">
       <button className="toggle" onClick={() => setMenuOpen((prev) => !prev)}>
-        {menuOpen ? "Link anzeigen" : "Link verstecken"}
+        {menuOpen ? "Link verstecken" : "Link anzeigen"}
       </button>
       <div className={`menuCode${menuOpen ? " show-menu" : ""}`}>
         <div
@@ -16,6 +16,7 @@ const Menu = () => {
           }}
         >
           {window.location.href}
+          <img src="/copySymbol.png" id="copySymbol"></img>
         </div>
       </div>
     </nav>
