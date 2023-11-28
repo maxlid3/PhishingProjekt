@@ -30,7 +30,7 @@
 #copySymbol {
   width: 18px;
   height: 20px;
-  filter:invert(95%);
+  filter: invert(95%);
   margin-left: 4px;
   transition: 0.15s;
 }
@@ -39,45 +39,38 @@
   transform: scale(110%);
 }
 
-body{
+body {
   background-color: #333;
-  color: #fff; /* Textfarbe auf Weiß für bessere Lesbarkeit */
-  margin: 0; /* Entfernt den Standardmargin des body-Elements */
-  padding: 0; /* Entfernt den Standardpadding des body-Elements */
-}
-.quiz {
-  @apply text-center bg-[rgb(71,85,105)] min-w-[880px]/* Dunkelgrau als Hintergrundfarbe */
-}
-.start-button {
-  @apply cursor-pointer bg-[#4caf50] text-white p-5 mt-3 rounded-lg text-base relative
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
-/* Frage-Container */
+.quiz {
+  @apply text-center bg-[rgb(71,85,105)] min-w-[880px];
+}
+
 .question {
   margin-top: 10px;
   margin-bottom: 20px;
-  font-size: 24px; /* Passen Sie die Schriftgröße nach Bedarf an */
+  font-size: 24px;
 }
 
-/* Bild */
 img {
   max-width: 1200px;
-  max-height: 430px;
+  max-height: 600px;
   width: auto;
   height: auto;
 }
 
-/* Antwortcontainer */
 .answers {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
 }
 
-/* Antwort-Stile */
 .answer {
   padding: 10px;
-  border: 2px solid #4caf50;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -91,6 +84,7 @@ img {
 
 .correct-answer {
   background-color: #33e43c;
+  border: 3.5px solid rgba(0, 0, 0, 1); /* Schwarz mit 70% Transparenz */  
 }
 
 .wrong-answer {
@@ -102,52 +96,45 @@ img {
   opacity: 0.7;
 }
 
-/* Ergebnisse-Stile */
 .results {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* 100% der Bildschirmhöhe nutzen */
+  height: 100vh;
 }
 
 .congratulations {
-  font-size: 50px; /* Passen Sie die Schriftgröße nach Bedarf an */
+  font-size: 50px;
   font-weight: bold;
   color: #4caf50;
 }
 
 .results-info {
   margin-top: 10px;
-  font-size: 20px; /* Passen Sie die Schriftgröße nach Bedarf an */
+  font-size: 20px;
 }
 
-.next-button {
+.next-button, .start-button {
   cursor: pointer;
   background-color: #4caf50;
   color: #fff;
-  padding: 15px; /* Passen Sie die Polsterung nach Bedarf an */
+  padding: 15px;
   margin-top: 20px;
   border: none;
   border-radius: 8px;
-  font-size: 20px; /* Passen Sie die Schriftgröße nach Bedarf an */
+  font-size: 20px;
 }
 
-.next-button:hover {
+.next-button:hover, .start-button:hover {
   background-color: #45a049;
 }
 
-/* Timer-Stile */
 .timer {
   font-size: 18px;
   font-weight: bold;
   color: #fff;
   margin-top: 10px;
-}
-
-/* Stile für den Start-Button */
-.start-button:hover {
-  background-color: #45a049;
 }
 
 .leaderboard {
@@ -161,7 +148,6 @@ img {
   margin-bottom: 8px;
 }
 
-/*DevCheck*/
 .devButton {
   @apply bg-red-500 cursor-pointer m-1 p-2 rounded-md justify-center
 }

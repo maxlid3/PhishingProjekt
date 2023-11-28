@@ -27,13 +27,13 @@ export default function _App(props: AppProps) {
   return (
     <RecoilRoot>
       <Head>
-        <title>PhishingGame</title>
+        <title>Antiphish</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
         <meta name="description" content="PhishingGame" />
-        <link rel="icon" href="/AntiPhish_Logo128.png" />
+        <link rel="icon" href="/AntiPhishLogo3_groß.jpg" />
       </Head>
 
       <Script

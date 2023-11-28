@@ -9,14 +9,13 @@ export const data: Question[] = [
   {
     question: "Ist diese Mail eine Phishing Mail?",
     incorrectAnswers: [
+      "Nein",
       "Nö",
-      "Nö",
-      "Nö",
+      "Nee",
     ],
     correctAnswer: "Ja, na klar.",
-    imagePath: "random1.png",
+    imagePath: "path/to/your/image.jpg",
   },
-
   {
     question:
       "Where in an HTML document is the correct place to refer to an external style sheet?",
@@ -64,6 +63,26 @@ export const data: Question[] = [
     question: "Which property is used to change the background color?",
     incorrectAnswers: ["color", "bgcolor", "bgColor"],
     correctAnswer: "background-color",
+    imagePath: "path/to/your/image.jpg",
+  },
+  {
+    question: "How do you add a background color for all <h1> elements?",
+    incorrectAnswers: [
+      "all.h1 {background-color:#FFFFFF;}",
+      "h1.setAll {background-color:#FFFFFF;}",
+      "h1.all {background-color:#FFFFFF;}",
+    ],
+    correctAnswer: "h1 {background-color:#FFFFFF;}",
+    imagePath: "path/to/your/image.jpg",
+  },
+  {
+    question: "How do you add a background color for all <h1> elements?",
+    incorrectAnswers: [
+      "all.h1 {background-color:#FFFFFF;}",
+      "h1.setAll {background-color:#FFFFFF;}",
+      "h1.all {background-color:#FFFFFF;}",
+    ],
+    correctAnswer: "h1 {background-color:#FFFFFF;}",
     imagePath: "path/to/your/image.jpg",
   },
   {
