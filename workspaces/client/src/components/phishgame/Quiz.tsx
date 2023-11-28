@@ -4,7 +4,7 @@ import { QuizContext } from "./contexts/quiz";
 import Timer from "./Timer";
 
 import Menu from "@components/game/PopOut";
-
+//TODO Proposal: maybe extract Actions, dispatch functionality, views and state into separate files, if you have time and its worth it for you, would make the code much cleaner 
 const Quiz = () => {
   const [quizState, dispatch] = useContext(QuizContext);
   const [timer, setTimer] = useState(new Timer(10000));
@@ -117,6 +117,7 @@ const Quiz = () => {
               ))}
             </div>
           </div>
+          {/* TODO can be a button + would extract the onClick in a function*/}
           <div
             onClick={() => {
               dispatch({ type: "RESTART" });
@@ -135,6 +136,7 @@ const Quiz = () => {
             Question {quizState.currentQuestionIndex + 1}/
             {quizState.questions.length}
           </div>
+          {/* TODO can be a button + would extract the onClick in a function*/}
           {quizState.currentAnswer && (
             <div
               onClick={() => {
@@ -159,6 +161,7 @@ const Quiz = () => {
       )}
       {!quizState.showResults && !quizState.gameStarted && (
         <div>
+          {/* TODO can be a button */}
           <div onClick={startGame} className="start-button">
             Start Game
           </div>

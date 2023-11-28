@@ -15,11 +15,13 @@ const Question: React.FC<QuestionProps> = ({ imagePath }) => {
   return (
     <div>
       <div className="flex justify-center">
+        {/* TODO use Image instead of img in react */}
         <img src={imagePath} alt="Question" />
       </div>
       <div className="question">{currentQuestion.question}</div>
       <div className="answers">
         {quizState.answers.map((answer, index) => (
+          //TODO dont use only the index for the key, can make things fucked up smt
           <Answer
             answerText={answer}
             currentAnswer={quizState.currentAnswer}
