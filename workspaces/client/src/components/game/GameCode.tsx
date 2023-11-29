@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const GameCode = () => {
  const [stringToAppend, setStringToAppend] = useState('');
 
+ //hier richtiger Website verlinkung einfügen
  const handleClick = () => {
     window.location.href = `http://localhost:3033/?lobby=${stringToAppend}`;
  };
@@ -17,9 +18,10 @@ const GameCode = () => {
         type="text"
         value={stringToAppend}
         onChange={handleInputChange}
-        placeholder="Append to Google URL"
+        placeholder="Lobbycode"
       />
-      <button onClick={handleClick}>Go to Google</button>
+      <br/>
+      <button onClick={handleClick}>Lobby Join</button>
     </div>
  );
 };

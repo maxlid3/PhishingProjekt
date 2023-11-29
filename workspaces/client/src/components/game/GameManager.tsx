@@ -6,10 +6,8 @@ import { ServerPayloads } from "@memory-cards/shared/server/ServerPayloads";
 import { useRecoilState } from "recoil";
 import { CurrentLobbyState } from "@components/game/states";
 import Introduction from "@components/game/Introduction";
-import Game from "@components/game/Game";
 import { useRouter } from "next/router";
 import { showNotification } from "@mantine/notifications";
-
 import { QuizProvider } from "@components/phishgame/contexts/quiz";
 import Quiz from "@components/phishgame/Quiz";
 

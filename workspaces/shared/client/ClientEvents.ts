@@ -10,4 +10,5 @@ export enum ClientEvents
 
   // Game
   GameRevealCard = 'client.game.reveal_card',
+  ForceStart ='ForceStart.state'
 }
