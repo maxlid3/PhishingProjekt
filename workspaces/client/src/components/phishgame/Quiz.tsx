@@ -6,11 +6,11 @@ import Header from "@components/layout/Header";
 
 const Quiz = () => {
   const [quizState, dispatch] = useContext(QuizContext);
-  const [timer, setTimer] = useState(new Timer(10000));
+  const [timer, setTimer] = useState(new Timer(15000));
   const [remainingTime, setRemainingTime] = useState<number | null>(
     timer.getTimeRemaining()
   );
-  const timerduration = 10000;
+  const timerduration = 15000;
 
   const currentQuestion = quizState.questions[quizState.currentQuestionIndex];
   const imagePath = currentQuestion.imagePath;
@@ -20,7 +20,7 @@ const Quiz = () => {
   const resetQuiz = () => {
     dispatch({ type: "RESTART" }); // Quiz zurücksetzen
     setTimer(new Timer(timerduration)); // Timer zurücksetzen
-    setRemainingTime(10); // Verbleibende Zeit auf Startwert setzen
+    setRemainingTime(15); // Verbleibende Zeit auf Startwert setzen
     dispatch({
       type: "UPDATE_LEADERBOARD",
       payload: {
@@ -33,7 +33,7 @@ const Quiz = () => {
   const startGame = () => {
     dispatch({ type: "START_GAME" });
     setTimer(new Timer(timerduration)); // Timer beim Start des Spiels zurücksetzen
-    setRemainingTime(10); // Setzen Sie die verbleibende Zeit auf den gewünschten Startwert (in Sekunden)
+    setRemainingTime(15); // Setzen Sie die verbleibende Zeit auf den gewünschten Startwert (in Sekunden)
     startTimer();
   };
   const startTimer = () => {
@@ -68,7 +68,7 @@ const Quiz = () => {
   useEffect(() => {
     // Diese useEffect-Hook wird bei Änderungen an quizState.gameStarted aufgerufen
     if (quizState.gameStarted) {
-      setRemainingTime(10); // Setzen Sie die verbleibende Zeit auf den gewünschten Startwert (in Sekunden)
+      setRemainingTime(15); // Setzen Sie die verbleibende Zeit auf den gewünschten Startwert (in Sekunden)
       startTimer();
     }
   }, [quizState.gameStarted]);
