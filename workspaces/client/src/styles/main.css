@@ -127,11 +127,14 @@ img {
 
 .logo-container {
   position: fixed;
-  top: 10px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
+  width: 400px; /* Neue Breite */
+  height: 400px; /* Neue Höhe */
 }
+
 
 .text-2xl {
   font-size: 40px;
