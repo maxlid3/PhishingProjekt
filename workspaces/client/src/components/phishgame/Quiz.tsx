@@ -2,26 +2,8 @@ import { useContext, useState, useEffect } from "react";
 import Question from "./Question";
 import { QuizContext } from "./contexts/quiz";
 import Timer from "./Timer";
-import Menu from "@components/game/PopOut";
-import {sendForceStartToServer} from "./ForceStart";
+import Header from "@components/layout/Header";
 
-const ActivateButton = () => {
-  const [isActive, setIsActive] = useState(false);
-
-  const activate = () => {
-    if (!isActive) {
-      setIsActive(true);
-      const ForceStart = true;
-      sendForceStartToServer(ForceStart);
-      
-  }
-  };
-  return (
-    <button onClick={activate} disabled={isActive}>
-      Start Game
-    </button>
-  );
-};
 const Quiz = () => {
   const [quizState, dispatch] = useContext(QuizContext);
   const [timer, setTimer] = useState(new Timer(10000));
@@ -47,8 +29,6 @@ const Quiz = () => {
       },
     });
   };
-
-
 
   const startGame = () => {
     dispatch({ type: "START_GAME" });
@@ -178,12 +158,9 @@ const Quiz = () => {
       )}
       {!quizState.showResults && !quizState.gameStarted && (
         <div>
-           <div onClick={startGame} className="start-button">
+          <Header />
+          <div onClick={startGame} className="start-button">
             Start Game
-          </div>
-          <ActivateButton/>
-          <div>
-            <Menu />
           </div>
         </div>
       )}
