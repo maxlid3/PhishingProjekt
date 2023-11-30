@@ -1,29 +1,36 @@
 import Image from "next/image";
 import { AntiPhish_Logo512 } from "@icons/cards";
 import Link from "next/link";
+import { useContext } from "react";
+import { QuizContext } from ".././phishgame/contexts/quiz";
 
-export default function Header() {
+const Header = () => {
+  const [quizState] = useContext(QuizContext);
+
   const clearGame = () => {
-    // FIXME: Not very elegant, but using normal router would just stuck me in a infinite loop
-    //        even if I removed query parameter and push it to load home page
     window.location.href = window.location.origin;
   };
 
+  if (quizState.gameStarted) {
+    // Wenn das Spiel gestartet ist, zeigen Sie das Logo nicht an.
+    return null;
+  }
+
+  // Wenn das Spiel nicht gestartet ist, zeigen Sie das Logo an.
   return (
-    <div className="flex justify-center">
+    <div className="logo-container">
       <Link href="/">
         <a onClick={clearGame}>
-          <div>
-            <Image
-              src={AntiPhish_Logo512}
-              alt="AntiPhish_Logo512"
-              className="ml-2"
-              width={300}
-              height={300}
-            />
-          </div>
+          <Image
+            src={AntiPhish_Logo512}
+            alt="AntiPhish Logo"
+            width={300}
+            height={300}
+          />
         </a>
       </Link>
     </div>
   );
-}
+};
+
+export default Header;

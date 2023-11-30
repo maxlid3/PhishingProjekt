@@ -14,14 +14,14 @@ const GameCode = () => {
 
  return (
     <div>
-      <input
+      <input className="btn"
         type="text"
         value={stringToAppend}
         onChange={handleInputChange}
         placeholder="Lobbycode"
       />
       <br/>
-      <button onClick={handleClick}>Lobby Join</button>
+      <button className="btn" onClick={handleClick}>Lobby Join</button>
     </div>
  );
 };

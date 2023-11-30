@@ -37,7 +37,7 @@ export default function Introduction() {
   return (
     <div className="mt-4">
       <h2 className="text-2xl text-center">
-        Willkommen bei unserem Phishing-Quiz!
+        Willkommen bei AntiPhish!
       </h2>
 
       <Divider my="md" />

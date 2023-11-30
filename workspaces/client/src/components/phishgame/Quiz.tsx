@@ -121,14 +121,14 @@ const Quiz = () => {
           <div className="results-info">
             <div>You have completed the quiz.</div>
             <div>
-              You've got {quizState.correctAnswersCount} of &nbsp;
+              You've got {quizState.correctAnswersCount} of&nbsp;
               {quizState.questions.length} right.
             </div>
           </div>
           <div>
             {/* Display leaderboard */}
             <div className="leaderboard">
-              <div>Leaderboard:</div>
+              <div></div>
               {quizState.leaderboard.map((entry, index) => (
                 <div key={index}>
                   {index + 1}. {entry.playerName}: {entry.score}
