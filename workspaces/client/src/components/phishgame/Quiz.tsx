@@ -157,7 +157,7 @@ const Quiz = () => {
         </div>
       )}
       {!quizState.showResults && !quizState.gameStarted && (
-        <div className="flex items-start">
+        <div>
           <Header />
           <div onClick={startGame} className="start-button">
             Start Game

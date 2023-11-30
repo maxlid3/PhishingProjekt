@@ -10,12 +10,8 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
-.quiz {
-  @apply text-center h-screen
-}
-
-.results {
-  @apply text-center mt-80
+.quiz, .results {
+  text-align: center;
 }
 
 .start-button, .next-button, .answer {
@@ -124,13 +120,9 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .next-button, .answer {
+  .start-button, .next-button, .answer {
     padding: 10px 20px;
   }
-}
-
-.start-button {
-  @apply w-auto mt-20
 }
 
 .logo-container {
