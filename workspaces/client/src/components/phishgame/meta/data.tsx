@@ -13,7 +13,7 @@ export const data: Question[] = [
       "Ja, weil Inhalt verdächtig",
       "Nein, weil Inhalt authentisch",
     ],
-    correctAnswer: "Nein, weil Inhalt und Absender serös",
+    correctAnswer: "Nein, weil Inhalt und Absender seriös",
     imagePath: "path/to/your/image1.jpg",
   },
   {
@@ -30,7 +30,7 @@ export const data: Question[] = [
   {
     question: "Ist diese Mail eine Phishing Mail?",
     incorrectAnswers: ["Ja, weil Link verdächtig", "Ja, weil Gestaltung unstimmig", "Nein, weil Absender authentisch"],
-    correctAnswer: "Nein, weil Absender und Links serös",
+    correctAnswer: "Nein, weil Absender und Links seriös",
     imagePath: "path/to/your/image3.jpg",
   },
   {
