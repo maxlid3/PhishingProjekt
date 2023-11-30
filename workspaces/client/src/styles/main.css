@@ -10,8 +10,12 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
-.quiz, .results {
-  text-align: center;
+.quiz {
+  @apply text-center h-screen
+}
+
+.results {
+  @apply text-center mt-80
 }
 
 .start-button, .next-button, .answer {
@@ -120,17 +124,17 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .start-button, .next-button, .answer {
+  .next-button, .answer {
     padding: 10px 20px;
   }
 }
 
+.start-button {
+  @apply w-auto mt-20
+}
+
 .logo-container {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
+  @apply w-auto mt-20
 }
 
 .text-2xl {

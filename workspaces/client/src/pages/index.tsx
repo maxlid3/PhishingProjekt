@@ -5,9 +5,9 @@ import Quiz from "@components/phishgame/Quiz";
 
 const Page: NextPage = () => {
   return (
-    <div className="bg-slate-600 min-h-screen min-w-screen">
+    <div>
       <React.StrictMode>
-        <div className="flex items-start justify-center self-center min-w-[800px]">
+        <div>
           <div>
             <QuizProvider>
               <Quiz />
