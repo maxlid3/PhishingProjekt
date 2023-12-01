@@ -10,8 +10,18 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
-.quiz, .results {
-  text-align: center;
+.quiz {
+  display: flex;
+  justify-content: center; /* Horizontale Zentrierung der Inhalte */
+  align-items: center; /* Vertikale Zentrierung der Inhalte */
+  text-align: center; /* Zentriert den Text innerhalb der Kinder-Elemente */
+}
+
+.results {
+  display: flex;
+  justify-content: center; /* Horizontale Zentrierung der Inhalte */
+  align-items: center; /* Vertikale Zentrierung der Inhalte */
+  text-align: center; /* Zentriert den Text innerhalb der Kinder-Elemente */
 }
 
 .start-button, .next-button, .answer {
@@ -24,6 +34,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-bottom: 10; /* Vergrößerter Abstand zwischen den Buttons */
+
 }
 .btn{
   background-color: #00563f;
@@ -120,21 +131,31 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .start-button, .next-button, .answer {
+  .next-button, .answer {
     padding: 10px 20px;
   }
 }
 
-.logo-container {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  width: 400px; /* Neue Breite */
-  height: 400px; /* Neue Höhe */
+.start-button {
+  background-color: #00563f;
+  color: #ffffff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10; /* Vergrößerter Abstand zwischen den Buttons */
 }
 
+.logo-container {
+  display: flex;
+  width: 500px; /* Neue Breite */
+  height: 500px; /* Neue Höhe */
+  align-items: center; /* Vertikale Zentrierung */
+  justify-content: center; /* Horizontale Zentrierung */
+  transform: translateY(-10%); /* Verschiebt das Logo leicht nach oben */
+}
 
 .text-2xl {
   font-size: 40px;
